@@ -1,0 +1,105 @@
+@import "./common.scss";
+
+/* MAIN */
+.menu_title{
+    @include heading_2();
+    color: $dark;
+    width: 800px;
+    height: 150px;
+}
+.menu_title_italic{
+    @include heading_2_accent();
+    color: $accent;
+}
+.menu_coffee{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+/* tabs */
+.tabs{ 
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.tab{
+    border-radius: 100px;
+    background: $light;
+    border: 1px $border_light solid;
+    margin-top: 40px;
+    display: flex;
+    position: relative;
+}
+.circle_icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    background: $border_light;
+    margin: 8px;
+}
+.icon_in_circle{
+    padding: 3px 7px 3px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tab_name{
+    @include link_button();
+    margin: 11px 16px 11px 0px;
+    color: $dark;
+}
+.tab:hover, .tab:active{
+    background: $container;
+    border: none;
+    border: 1px $container solid;
+    .tab_name{
+        color: $light;
+    }
+    .circle_icon{
+        background: $light;
+    }
+}
+
+/* cards */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 40px;
+    margin-top: 40px;
+}
+.card {
+    width: 310px;
+    height: 506px;
+    border: 1px $border_light solid;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.card_image{
+    width: 310px;
+    height: 310px;
+    border-radius: 40px;
+}
+.card_content{
+    margin: 20px;
+    height: 100%;
+}
+.card_content{
+    @include heading_3();
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content_coffee_description{
+    @include medium();
+    color: $dark;
+    margin-top: 12px;
+}
+.content_coffee_price{
+    @include heading_3();
+    color: $dark;
+}

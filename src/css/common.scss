@@ -1,0 +1,68 @@
+// colors
+
+$dark: #403F3D;
+$light: #E1D4C9;
+$accent: #B0907A;
+$body: #E1D4C9;
+$container: #665F55;
+$backdrop: #403F3DCC;
+$border_light: #C1B6AD;
+$border_dark: #665F55;
+
+// typography
+@mixin heading_1 {
+	font-family: 'Inter';
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 105%;
+  }
+@mixin heading_1_accent{
+    font-family: 'Inter';
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 105%;
+    font-style: italic;
+  }
+@mixin heading_2{
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+}
+@mixin heading_2_accent{
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 125%;
+    font-style: italic;
+}
+@mixin heading_3{
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 125%;
+}
+@mixin medium{
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+@mixin caption{
+    font-family: 'Inter';
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 140%;
+}
+@mixin link_button{
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+}
+@mixin burger_link{
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+}
