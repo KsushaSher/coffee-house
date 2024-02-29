@@ -1,105 +1,133 @@
 @import "./common.scss";
 
 /* MAIN */
-.menu_title{
-    @include heading_2();
-    color: $dark;
-    width: 800px;
-    height: 150px;
+.menu_title {
+  @include heading_2();
+  color: $dark;
+  width: 800px;
+  height: 150px;
 }
-.menu_title_italic{
-    @include heading_2_accent();
-    color: $accent;
+.menu_title_italic {
+  @include heading_2_accent();
+  color: $accent;
 }
-.menu_coffee{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.menu_coffee {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 }
 /* tabs */
-.tabs{ 
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
 }
-.tab{
-    border-radius: 100px;
-    background: $light;
-    border: 1px $border_light solid;
-    margin-top: 40px;
-    display: flex;
-    position: relative;
-}
-.circle_icon{
+.tab {
+  border-radius: 100px;
+  background: $light;
+  border: 1px $border_light solid;
+  display: flex;
+  position: relative;
+  .circle_icon {
     width: 30px;
     height: 30px;
     border-radius: 100px;
     background: $border_light;
     margin: 8px;
-}
-.icon_in_circle{
-    padding: 3px 7px 3px 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.tab_name{
+    .icon_in_circle {
+      padding: 7px 7px 7px 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .tab_name {
     @include link_button();
     margin: 11px 16px 11px 0px;
     color: $dark;
+  }
 }
-.tab:hover, .tab:active{
-    background: $container;
-    border: none;
-    border: 1px $container solid;
-    .tab_name{
-        color: $light;
-    }
-    .circle_icon{
-        background: $light;
-    }
+
+.tab:hover,
+.tab:active,
+.coffee {
+  transition: 1s;
+  background: $container;
+  border: none;
+  border: 1px $container solid;
+  .circle_icon {
+    background: $light;
+  }
+  .tab_name {
+    color: $light;
+  }
 }
 
 /* cards */
-.cards{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 40px;
-    margin-top: 40px;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin-bottom: 100px;
 }
 .card {
-    width: 310px;
-    height: 506px;
-    border: 1px $border_light solid;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
+  width: 310px;
+  height: 506px;
+  border: 1px $border_light solid;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  &:hover {
+    .card_image {
+      transform: scale(1);
+    }
+  }
 }
-.card_image{
-    width: 310px;
-    height: 310px;
-    border-radius: 40px;
+.card_image_wrapper {
+  width: 310px;
+  height: 310px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
 }
-.card_content{
-    margin: 20px;
-    height: 100%;
+
+.card_image {
+  transition: 0.5s;
+  width: 310px;
+  height: 310px;
+  transform: scale(1.1);
 }
-.card_content{
-    @include heading_3();
-    color: $dark;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card_content {
+  @include heading_3();
+  box-sizing: border-box;
+  height: 196px;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: $dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.content_coffee_description{
-    @include medium();
-    color: $dark;
-    margin-top: 12px;
+.content_coffee_description {
+  @include medium();
+  color: $dark;
+  margin-top: 12px;
 }
-.content_coffee_price{
-    @include heading_3();
-    color: $dark;
+.content_coffee_price {
+  @include heading_3();
+  color: $dark;
+  margin: auto auto 0 0;
 }

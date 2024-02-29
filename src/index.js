@@ -20,14 +20,12 @@ const cardsElements = CARDS.map(
   //создаем и заполняем карточки с помощью написанной нами ранее функции
   (card) =>
     genElement("div", { class: "card" }, [
-      genElement("img", { class: "card_image", src: card.img }),
+      genElement("div", { class: "card_image_wrapper" }, [
+        genElement("img", { class: "card_image", src: card.img }),
+      ]),
       genElement("div", { class: "card_content" }, [
-        genElement("div", { class: "card_content_text" }, [
-          genElement("span", { class: "content_coffee_title" }, [card.title]),
-          genElement("p", { class: "content_coffee_description" }, [
-            card.description,
-          ]),
-        ]),
+        genElement("span", { class: "content_coffee_title" }, [card.title]),
+        genElement("p", { class: "content_coffee_description" }, [card.description]),
         genElement("span", { class: "content_coffee_price" }, [card.price]),
       ]),
     ])

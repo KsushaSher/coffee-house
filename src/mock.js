@@ -60,5 +60,3 @@ export const CARDS = [
     price: "$6.50",
   },
 ];
-
-console.log(CARDS);
