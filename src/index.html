@@ -43,22 +43,24 @@
     <main class="main">
       <!-- picture -->
       <section class="enjoy">
-        <h1 class="offer_title">
-          <span class="offer_title_italic">Enjoy</span> premium coffee at our charming cafe
-        </h1>
+        <div class="enjoy_content">
+          <h1 class="offer_title">
+            <span class="offer_title_italic">Enjoy</span> premium coffee at our charming cafe
+          </h1>
 
-        <p class="offer_text">
-          With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a
-          popular destination for coffee lovers and those seeking a warm and inviting space to enjoy
-          their favorite beverage.
-        </p>
+          <p class="offer_text">
+            With its inviting atmosphere and delicious coffee options, the Coffee House Resource is
+            a popular destination for coffee lovers and those seeking a warm and inviting space to
+            enjoy their favorite beverage.
+          </p>
 
-        <button type="submit" class="enjoy_button">
-          <span class="enjoy_button_content">
-            <span>Menu</span>
-            <img class="button_menu_icon" src="/src/img/svg/coffee-cup_favicon.svg" alt="icon" />
-          </span>
-        </button>
+          <button type="submit" class="enjoy_button">
+            <span class="enjoy_button_content">
+              <span>Menu</span>
+              <img class="button_menu_icon" src="/src/img/svg/coffee-cup_favicon.svg" alt="icon" />
+            </span>
+          </button>
+        </div>
       </section>
 
       <section id="favorites_coffee" class="favorites_coffee">
@@ -108,71 +110,120 @@
           <div class="control_3"></div>
         </div>
       </section>
+    </main>
 
-      <section id="about" class="about">
-        <!-- section about  -->
-        <h2 class="text_description_about">
-          Resource is
-          <span class="text_description_about_italic">the perfect and cozy place</span> where you
-          can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
-        </h2>
+    <section id="about" class="about">
+      <!-- section about  -->
+      <h2 class="text_description_about">
+        Resource is
+        <span class="text_description_about_italic">the perfect and cozy place</span> where you can
+        enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
+      </h2>
 
-        <div class="images_about">
+      <div class="images_about">
+        <div class="image_about_wrapper_big">
           <img class="image image_one" src="/src/img/about-1.jpg" alt="about-1" />
+        </div>
+        <div class="image_about_wrapper_small">
           <img class="image image_two" src="/src/img/about-2.jpg" alt="about-2" />
+        </div>
+        <div class="image_about_wrapper_small">
           <img class="image image_three" src="/src/img/about-3.jpg" alt="about-3" />
+        </div>
+        <div class="image_about_wrapper_big">
           <img class="image image_four" src="/src/img/about-4.jpg" alt="about-4" />
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="mobile_app" class="mobile_app">
-        <!-- section mobile_app  -->
-        <div class="mobile_app_offer">
-          <h2 class="title_offer">
-            <span class="title_offer_italic">Download</span> our apps to start ordering
-          </h2>
+    <section id="mobile_app" class="mobile_app">
+      <!-- section mobile_app  -->
+      <div class="mobile_app_offer">
+        <h2 class="title_offer">
+          <span class="title_offer_italic">Download</span> our apps to start ordering
+        </h2>
 
-          <p class="text_offer">
-            Download the Resource app today and experience the comfort of ordering your favorite
-            coffee from wherever you are
-          </p>
+        <p class="text_offer">
+          Download the Resource app today and experience the comfort of ordering your favorite
+          coffee from wherever you are
+        </p>
 
-          <div class="buttons">
-            <form action="submit" class="button_app_store">
-              <!-- app овал -->
-              <!-- <button></button> -->
-              <img
-                class="icon_button_app_store"
-                src="/src/img/svg/icon_button_app_store.svg"
-                alt="icon button app store"
+        <div class="buttons">
+          <form action="submit" class="button_appStore">
+            <!-- app овал -->
+            <svg
+              class="icon_button_appStore"
+              width="28"
+              height="33"
+              viewBox="0 0 28 33"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.7063 17.6307C22.6694 13.6324 26.0641 11.6872 26.2193 11.5966C24.2967 8.86366 21.3169 8.49026 20.2697 8.46048C17.767 8.20369 15.3393 9.92062 14.0644 9.92062C12.764 9.92062 10.8008 8.48529 8.68482 8.52747C5.96196 8.56841 3.41468 10.1055 2.01762 12.4923C-0.865556 17.359 1.28474 24.5108 4.04705 28.4446C5.42884 30.3712 7.04347 32.5223 9.15687 32.4466C11.2245 32.3635 11.9968 31.1614 14.4919 31.1614C16.9641 31.1614 17.6893 32.4466 19.8447 32.3983C22.0637 32.3635 23.4608 30.463 24.7942 28.519C26.3911 26.3108 27.0323 24.1362 27.0578 24.0245C27.0056 24.0071 22.7483 22.4229 22.7063 17.6307Z"
+                fill="currentColor"
               />
-              <div class="button_text">
-                <p class="text_button_app_store">Available on the</p>
-                <p class="title_button_app_store">App Store</p>
-              </div>
-            </form>
-            <form action="submit" class="button_google">
-              <!-- google овал -->
-              <img
-                class="icon_button_google"
-                src="/src/img/svg/icon_google.svg"
-                alt="icon button google"
+              <path
+                d="M18.6347 5.87268C19.7468 4.51675 20.5076 2.67205 20.2964 0.800049C18.6869 0.86952 16.674 1.88554 15.5149 3.21169C14.4893 4.38029 13.5732 6.29571 13.8099 8.097C15.6179 8.2285 17.4743 7.20752 18.6347 5.87268Z"
+                fill="currentColor"
               />
-              <div class="button_text">
-                <p class="text_button_app_store">Available on</p>
-                <p class="title_button_app_store">Google Play</p>
-              </div>
-            </form>
-          </div>
+            </svg>
+
+            <!-- <img
+              class="icon_button_appStore"
+              src="/src/img/svg/icon_button_app_store.svg"
+              alt="icon button app store"
+            /> -->
+
+            <div class="button_text">
+              <p class="text_button_appStore">Available on the</p>
+              <p class="title_button_appStore">App Store</p>
+            </div>
+          </form>
+
+          <form action="submit" class="button_google">
+            <!-- google овал -->
+            <svg
+              class="icon_button_google"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.7558 3.20309C3.39335 3.57302 3.18359 4.14896 3.18359 4.89483V31.4995C3.18359 32.2454 3.39335 32.8213 3.7558 33.1913L3.84525 33.2725L19.1359 18.3701V18.0182L3.84525 3.11587L3.7558 3.20309Z"
+                fill="currentColor"
+              />
+              <path
+                d="M26.0776 23.34L20.9863 18.3701V18.0182L26.0837 13.0482L26.1979 13.1129L32.2345 16.4618C33.9573 17.4122 33.9573 18.9761 32.2345 19.9325L26.1979 23.2754L26.0776 23.34Z"
+                fill="currentColor"
+              />
+              <path
+                d="M25.2733 24.2008L20.0617 19.1196L4.68164 34.1167C5.25384 34.7031 6.18695 34.7738 7.24807 34.1873L25.2733 24.2008Z"
+                fill="currentColor"
+              />
+              <path
+                d="M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z"
+                fill="currentColor"
+              />
+            </svg>
+
+            <!--               <img
+              class="icon_button_google"
+              src="/src/img/svg/icon_google.svg"
+              alt="icon button google"
+            /> -->
+            <div class="button_text">
+              <p class="text_button_google">Available on</p>
+              <p class="title_button_google">Google Play</p>
+            </div>
+          </form>
         </div>
+      </div>
 
-        <img
-          class="mobile_app_screens"
-          src="/src/img/svg/mobile-screens.svg"
-          alt="mobile-screens"
-        />
-      </section>
-    </main>
+      <img class="mobile_app_screens" src="/src/img/svg/mobile-screens.svg" alt="mobile-screens" />
+    </section>
 
     <footer id="contacts" class="contacts">
       <div class="left_side_contacts">
@@ -181,20 +232,67 @@
         </h2>
 
         <div class="icons_footer">
-          <form action="submit" class="button_twitter">
-            <!-- <button></button> -->
-            <img src="/src/img/svg/icon_twitter.svg" alt="icon_twitter" />
-          </form>
+          <div action="submit" class="button_twitter">
+            <!-- <img src="/src/img/svg/icon_twitter.svg" alt="icon_twitter" /> -->
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
 
-          <form action="submit" class="button_instagram">
-            <!-- <button></button> -->
-            <img src="/src/img/svg/icon_instagram2.svg" alt="icon_instagram" />
-          </form>
+          <div action="submit" class="button_instagram">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"
+                stroke="currentColor"
+              />
+              <path
+                d="M17.5 6.51L17.51 6.49889"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
 
-          <form action="submit" class="button_facebook">
-            <!-- <button></button> -->
-            <img src="/src/img/svg/icon_facebook.svg" alt="icon_facebook" />
-          </form>
+          <div action="submit" class="button_facebook">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 

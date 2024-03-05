@@ -1,6 +1,9 @@
 @import "./common.scss";
-
-/* MAIN */
+// header
+.header_logo_pic {
+  cursor: pointer;
+}
+// MAIN
 .menu_title {
   @include heading_2();
   color: $dark;
@@ -19,7 +22,7 @@
   align-items: center;
   margin-bottom: 40px;
 }
-/* tabs */
+// tabs
 .tabs {
   display: flex;
   justify-content: center;
@@ -66,8 +69,12 @@
     color: $light;
   }
 }
+.tea,
+.dessert:hover {
+  cursor: pointer;
+}
 
-/* cards */
+// cards
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -86,7 +93,6 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-
   &:hover {
     .card_image {
       transform: scale(1);
@@ -94,15 +100,14 @@
   }
 }
 .card_image_wrapper {
-  width: 310px;
-  height: 310px;
+  width: 308px;
+  height: 308px;
+  border-radius: 40px;
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 40px;
 }
-
 .card_image {
   transition: 0.5s;
   width: 310px;

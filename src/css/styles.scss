@@ -1,13 +1,17 @@
 @import "./common.scss";
 
 html {
-  background: $light;
-  width: 1440px;
-  box-sizing: border-box;
-  padding: 20px 40px 40px 40px;
+  width: 100%;
+  //   box-sizing: border-box;
   display: block;
   margin: auto;
+}
+body {
+  padding: 20px 40px 40px;
+  background: $light;
+  max-width: 1440px;
   scroll-behavior: smooth;
+  border: 1px solid $dark;
 }
 
 // HEADER
@@ -18,6 +22,7 @@ html {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 .header_logo_link {
   display: block;
@@ -29,7 +34,7 @@ html {
 
 .header_link {
   @include link_button();
-  @include link_animation();
+  @include link_animation_dark();
   color: $dark;
   margin-right: 40px;
 }
@@ -38,12 +43,15 @@ html {
 }
 .header_link_menu {
   @include link_button();
-  @include link_animation();
+  @include link_animation_dark();
   transition: 1s;
   color: $dark;
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 //enjoy
@@ -52,13 +60,33 @@ html {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 100px 730px 100px 100px;
+  padding: 100px;
   border-radius: 40px;
-  width: 1360px;
+  max-width: 1360px;
+  max-height: 644px;
+  width: 100%;
   height: 644px;
   background: url(/src/img/img-hero.jpg) no-repeat center;
   margin-bottom: 100px;
 }
+
+.enjoy_content {
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .enjoy {
+    padding-left: 60px;
+    padding-right: 0;
+  }
+  .enjoy_content {
+    // max-width: 688px;
+  }
+}
+
 .offer_title {
   @include heading_1();
   color: $light;
@@ -94,6 +122,7 @@ html {
   }
 
   &:hover {
+    cursor: pointer;
     .button_menu_icon {
       opacity: 1;
       width: 20px;
@@ -197,6 +226,7 @@ html {
   }
   &:hover {
     background: $border_dark;
+    cursor: pointer;
     .arrow_right {
       opacity: 0;
     }
@@ -237,6 +267,7 @@ html {
   }
   &:hover {
     background: $border_dark;
+    cursor: pointer;
     .arrow_left {
       opacity: 0;
     }
@@ -288,9 +319,25 @@ html {
   height: 1060px;
   padding-top: 40px;
 }
-.image {
-  border-radius: 20px;
+.image_about_wrapper_big {
   width: 660px;
+  height: 590px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image_about_wrapper_small {
+  width: 660px;
+  height: 430px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.image {
+  transform: scale(1.1);
+  position: relative;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1);
+  }
 }
 
 /* section mobile_app */
@@ -320,8 +367,9 @@ html {
   @include medium();
   color: $dark;
 }
-.button_app_store,
+.button_appStore,
 .button_google {
+  color: $dark;
   width: 200px;
   height: 64px;
   border-radius: 100px;
@@ -330,22 +378,37 @@ html {
   align-items: center;
   box-sizing: border-box;
   margin-right: 20px;
+  &:hover {
+    color: $light;
+    background: $border_dark;
+    .text_button_appStore,
+    .title_button_appStore,
+    .text_button_google,
+    .title_button_google {
+      color: $light;
+    }
+    .icon_button_appStore path,
+    .icon_button_google path {
+      fill: $light;
+    }
+  }
 }
-.text_button_app_store,
-.text_button_app_store {
+
+.text_button_appStore,
+.text_button_google {
   @include caption();
   color: $dark;
   padding: 12px, 20px, 12px, 20px;
   text-align: center;
 }
-.title_button_app_store,
-.title_button_app_store {
+.title_button_appStore,
+.title_button_google {
   @include link_button();
   color: $dark;
   text-align: center;
   padding-top: 2px;
 }
-.icon_button_app_store,
+.icon_button_appStore,
 .icon_button_google {
   width: 36px;
   height: 36px;
@@ -363,7 +426,7 @@ html {
   height: 630px;
 }
 
-/* footer */
+// footer
 .contacts {
   background: $container;
   border-radius: 40px;
@@ -378,6 +441,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   padding-left: 100px;
 }
 .slogan {
@@ -391,13 +455,24 @@ html {
 }
 .icons_footer {
   display: flex;
+  gap: 12px;
 }
 .button_twitter,
 .button_instagram,
 .button_facebook {
   height: 60px;
   width: 60px;
-  padding-right: 12px;
+  color: $light;
+  border-radius: 100px;
+  border: 1px solid $light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  &:hover {
+    color: $dark;
+    background-color: $light;
+  }
 }
 .right_side_contacts {
   width: 530px;
@@ -418,12 +493,18 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .address,
 .telephone,
 .working_hours {
   display: flex;
 }
+.telephone,
+.address {
+  @include link_animation_light();
+}
+
 .map,
 .phone,
 .hours {
