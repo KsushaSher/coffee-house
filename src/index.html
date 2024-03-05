@@ -37,6 +37,11 @@
           >Menu <img src="./img/svg/header-coffee-cup.svg" alt="menu" />
         </a>
       </div>
+
+      <div class="button_icon_burger">
+        <span class="burger_line burger_line_first"></span>
+        <span class="burger_line burger_line_second"></span>
+      </div>
     </header>
 
     <!--  MAIN -->
@@ -63,8 +68,8 @@
         </div>
       </section>
 
+      <!-- section favorites_coffee -->
       <section id="favorites_coffee" class="favorites_coffee">
-        <!-- section favorites_coffee -->
         <h2 class="favorite_coffee_text">
           Choose your <span class="favorite_coffee_text_italic"> favorite </span> coffee
         </h2>
@@ -112,123 +117,11 @@
       </section>
     </main>
 
-    <section id="about" class="about">
-      <!-- section about  -->
-      <h2 class="text_description_about">
-        Resource is
-        <span class="text_description_about_italic">the perfect and cozy place</span> where you can
-        enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.
-      </h2>
-
-      <div class="images_about">
-        <div class="image_about_wrapper_big">
-          <img class="image image_one" src="/src/img/about-1.jpg" alt="about-1" />
-        </div>
-        <div class="image_about_wrapper_small">
-          <img class="image image_two" src="/src/img/about-2.jpg" alt="about-2" />
-        </div>
-        <div class="image_about_wrapper_small">
-          <img class="image image_three" src="/src/img/about-3.jpg" alt="about-3" />
-        </div>
-        <div class="image_about_wrapper_big">
-          <img class="image image_four" src="/src/img/about-4.jpg" alt="about-4" />
-        </div>
-      </div>
-    </section>
-
-    <section id="mobile_app" class="mobile_app">
-      <!-- section mobile_app  -->
-      <div class="mobile_app_offer">
-        <h2 class="title_offer">
-          <span class="title_offer_italic">Download</span> our apps to start ordering
-        </h2>
-
-        <p class="text_offer">
-          Download the Resource app today and experience the comfort of ordering your favorite
-          coffee from wherever you are
-        </p>
-
-        <div class="buttons">
-          <form action="submit" class="button_appStore">
-            <!-- app овал -->
-            <svg
-              class="icon_button_appStore"
-              width="28"
-              height="33"
-              viewBox="0 0 28 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22.7063 17.6307C22.6694 13.6324 26.0641 11.6872 26.2193 11.5966C24.2967 8.86366 21.3169 8.49026 20.2697 8.46048C17.767 8.20369 15.3393 9.92062 14.0644 9.92062C12.764 9.92062 10.8008 8.48529 8.68482 8.52747C5.96196 8.56841 3.41468 10.1055 2.01762 12.4923C-0.865556 17.359 1.28474 24.5108 4.04705 28.4446C5.42884 30.3712 7.04347 32.5223 9.15687 32.4466C11.2245 32.3635 11.9968 31.1614 14.4919 31.1614C16.9641 31.1614 17.6893 32.4466 19.8447 32.3983C22.0637 32.3635 23.4608 30.463 24.7942 28.519C26.3911 26.3108 27.0323 24.1362 27.0578 24.0245C27.0056 24.0071 22.7483 22.4229 22.7063 17.6307Z"
-                fill="currentColor"
-              />
-              <path
-                d="M18.6347 5.87268C19.7468 4.51675 20.5076 2.67205 20.2964 0.800049C18.6869 0.86952 16.674 1.88554 15.5149 3.21169C14.4893 4.38029 13.5732 6.29571 13.8099 8.097C15.6179 8.2285 17.4743 7.20752 18.6347 5.87268Z"
-                fill="currentColor"
-              />
-            </svg>
-
-            <!-- <img
-              class="icon_button_appStore"
-              src="/src/img/svg/icon_button_app_store.svg"
-              alt="icon button app store"
-            /> -->
-
-            <div class="button_text">
-              <p class="text_button_appStore">Available on the</p>
-              <p class="title_button_appStore">App Store</p>
-            </div>
-          </form>
-
-          <form action="submit" class="button_google">
-            <!-- google овал -->
-            <svg
-              class="icon_button_google"
-              width="36"
-              height="36"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.7558 3.20309C3.39335 3.57302 3.18359 4.14896 3.18359 4.89483V31.4995C3.18359 32.2454 3.39335 32.8213 3.7558 33.1913L3.84525 33.2725L19.1359 18.3701V18.0182L3.84525 3.11587L3.7558 3.20309Z"
-                fill="currentColor"
-              />
-              <path
-                d="M26.0776 23.34L20.9863 18.3701V18.0182L26.0837 13.0482L26.1979 13.1129L32.2345 16.4618C33.9573 17.4122 33.9573 18.9761 32.2345 19.9325L26.1979 23.2754L26.0776 23.34Z"
-                fill="currentColor"
-              />
-              <path
-                d="M25.2733 24.2008L20.0617 19.1196L4.68164 34.1167C5.25384 34.7031 6.18695 34.7738 7.24807 34.1873L25.2733 24.2008Z"
-                fill="currentColor"
-              />
-              <path
-                d="M25.2733 12.1876L7.24807 2.20103C6.18695 1.62058 5.25384 1.69125 4.68164 2.27772L20.0617 17.2688L25.2733 12.1876Z"
-                fill="currentColor"
-              />
-            </svg>
-
-            <!--               <img
-              class="icon_button_google"
-              src="/src/img/svg/icon_google.svg"
-              alt="icon button google"
-            /> -->
-            <div class="button_text">
-              <p class="text_button_google">Available on</p>
-              <p class="title_button_google">Google Play</p>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <img class="mobile_app_screens" src="/src/img/svg/mobile-screens.svg" alt="mobile-screens" />
-    </section>
-
     <footer id="contacts" class="contacts">
       <div class="left_side_contacts">
         <h2 class="slogan">
-          Sip, Savor, Smile. <span class="slogan_italic">It’s coffee time!</span>
+          Sip, Savor, Smile.
+          <span class="slogan_italic">It’s coffee time!</span>
         </h2>
 
         <div class="icons_footer">

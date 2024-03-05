@@ -67,6 +67,20 @@ $border_dark: #665f55;
   line-height: 125%;
 }
 
+@mixin mobile_heading_1_accent {
+  font-family: "Inter";
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 48.3px;
+}
+@mixin mobile_heading_1_accent_italic {
+  font-family: "Inter";
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 48.3px;
+  font-style: italic;
+}
+
 @mixin link_animation_dark {
   position: relative;
   &::after {

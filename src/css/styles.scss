@@ -2,12 +2,10 @@
 
 html {
   width: 100%;
-  //   box-sizing: border-box;
   display: block;
   margin: auto;
 }
 body {
-  padding: 20px 40px 40px;
   background: $light;
   max-width: 1440px;
   scroll-behavior: smooth;
@@ -18,11 +16,13 @@ body {
 .header {
   @include medium();
   color: $dark;
+  padding: 20px 40px 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 }
 .header_logo_link {
   display: block;
@@ -30,16 +30,13 @@ body {
 .header_list {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
 }
-
 .header_link {
   @include link_button();
   @include link_animation_dark();
   color: $dark;
-  margin-right: 40px;
-}
-.header_item:last-child {
-  margin: 0;
+  //   margin-right: 40px;
 }
 .header_link_menu {
   @include link_button();
@@ -54,39 +51,62 @@ body {
   }
 }
 
-//enjoy
-.enjoy {
+.button_icon_burger {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  border: 1px solid $dark;
+  border-radius: 100px;
   box-sizing: border-box;
-  padding: 100px;
-  border-radius: 40px;
-  max-width: 1360px;
-  max-height: 644px;
-  width: 100%;
-  height: 644px;
-  background: url(/src/img/img-hero.jpg) no-repeat center;
-  margin-bottom: 100px;
-}
-
-.enjoy_content {
-  width: 530px;
-  display: flex;
   flex-direction: column;
-  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  right: 40px;
+  opacity: 0;
+}
+.burger_line {
+  display: block;
+  width: 16px;
+  border: 1px solid $dark;
+  border-start-start-radius: 100px;
+  border-end-start-radius: 100px;
+  border-start-end-radius: 100px;
+  border-end-end-radius: 100px;
 }
 
 @media (max-width: 768px) {
-  .enjoy {
-    padding-left: 60px;
-    padding-right: 0;
+  .header_nav,
+  .header_menu {
+    transition: 0.3s;
+    // opacity: 0;
+    display: none;
   }
-  .enjoy_content {
-    // max-width: 688px;
+  .button_icon_burger {
+    opacity: 1;
   }
 }
 
+//enjoy
+.enjoy {
+  display: flex;
+  margin: 0px 40px 100px;
+  border-radius: 40px;
+  max-width: 1360px;
+  max-height: 644px;
+  background: url(/src/img/img-hero.jpg) no-repeat center;
+  margin-bottom: 100px;
+  padding: 0;
+}
+.enjoy_content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 100px;
+}
 .offer_title {
   @include heading_1();
   color: $light;
@@ -131,6 +151,17 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .enjoy_content {
+    margin: 100px 60px;
+  }
+  .button_menu_icon {
+    opacity: 1;
+    // width: 20px;
+    // padding-left: 8px;
+  }
+}
+
 /* .button_menu_fon {
   
   width: 200px;
@@ -149,7 +180,7 @@ body {
 /* MAIN */
 /* favorites_coffee */
 .favorites_coffee {
-  margin-bottom: 100px;
+  margin: 0px 40px 100px;
 }
 .favorite_coffee_text {
   @include heading_2();
@@ -299,7 +330,7 @@ body {
 
 /* section about */
 .about {
-  padding-bottom: 100px;
+  margin: 0px 40px 100px;
 }
 .text_description_about {
   @include heading_2();
@@ -345,7 +376,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin: 0px 40px 100px;
 }
 .mobile_app_offer {
   width: 630px;
@@ -430,23 +461,40 @@ body {
 .contacts {
   background: $container;
   border-radius: 40px;
-  height: 450px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 100px;
+  padding: 100px 100px;
+  margin: 0px 40px 40px;
 }
+
+@media (max-width: 768px) {
+  .contacts {
+    padding: 100px 60px;
+  }
+}
+
 .left_side_contacts {
-  width: 530px;
-  height: 250px;
+  flex: 1 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  padding-left: 100px;
 }
+.right_side_contacts {
+  flex: 1 0 1rem;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .slogan {
   @include heading_2();
   color: $light;
+  padding-bottom: 40px;
 }
 .slogan_italic {
   @include heading_2_accent();
@@ -474,14 +522,7 @@ body {
     background-color: $light;
   }
 }
-.right_side_contacts {
-  width: 530px;
-  height: 186px;
-  padding-right: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 .title_contacts {
   @include heading_3();
   color: $light;
