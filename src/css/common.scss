@@ -66,21 +66,32 @@ $border_dark: #665f55;
   font-weight: 600;
   line-height: 125%;
 }
-
 @mixin mobile_heading_1_accent {
   font-family: "Inter";
   font-size: 42px;
   font-weight: 600;
-  line-height: 48.3px;
+  line-height: 115%;
 }
 @mixin mobile_heading_1_accent_italic {
   font-family: "Inter";
   font-size: 42px;
   font-weight: 600;
-  line-height: 48.3px;
+  line-height: 115%;
   font-style: italic;
 }
-
+@mixin mobile_heading_2_accent {
+  font-family: "Inter";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 125%;
+}
+@mixin mobile_heading_2_accent_italic {
+  font-family: "Inter";
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 125%;
+  font-style: italic;
+}
 @mixin link_animation_dark {
   position: relative;
   &::after {

@@ -9,14 +9,14 @@ body {
   background: $light;
   max-width: 1440px;
   scroll-behavior: smooth;
-  border: 1px solid $dark;
+  //   border: 1px solid $dark;
 }
 
 // HEADER
 .header {
   @include medium();
   color: $dark;
-  padding: 20px 40px 100px;
+  padding: 20px 40px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -50,7 +50,6 @@ body {
     cursor: pointer;
   }
 }
-
 .button_icon_burger {
   display: flex;
   width: 44px;
@@ -89,6 +88,12 @@ body {
   }
 }
 
+@media (max-width: 380px) {
+  .header {
+    padding: 20px 16px;
+  }
+}
+
 //enjoy
 .enjoy {
   display: flex;
@@ -96,14 +101,19 @@ body {
   border-radius: 40px;
   max-width: 1360px;
   max-height: 644px;
-  background: url(/src/img/img-hero.jpg) no-repeat center;
+  background-image: url(/src/img/img-hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   margin-bottom: 100px;
+  height: 644px;
   padding: 0;
 }
 .enjoy_content {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  width: 530px;
   gap: 40px;
   margin: 100px;
 }
@@ -126,67 +136,75 @@ body {
   color: $dark;
   background: $light;
   border-radius: 100px;
-
   .enjoy_button_content {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-content: center;
-  }
-
-  .button_menu_icon {
-    transition: 0.5s;
-    opacity: 0;
-    width: 0;
-    padding-left: 0px;
-  }
-
-  &:hover {
-    cursor: pointer;
     .button_menu_icon {
-      opacity: 1;
-      width: 20px;
-      padding-left: 8px;
+      transition: 0.5s;
+      opacity: 0;
+      width: 0;
+      padding-left: 0px;
+    }
+    &:hover {
+      cursor: pointer;
+      .button_menu_icon {
+        opacity: 1;
+        width: 20px;
+        padding-left: 8px;
+      }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1439px) {
   .enjoy_content {
     margin: 100px 60px;
+    // flex: 1 0 auto;
   }
-  .button_menu_icon {
+  .enjoy_button .enjoy_button_content .button_menu_icon {
     opacity: 1;
-    // width: 20px;
-    // padding-left: 8px;
+    width: 20px;
+    padding-left: 8px;
   }
 }
 
-/* .button_menu_fon {
-  
-  width: 200px;
-  height: 64px;
-  box-sizing: border-box;
-  border: none;
-  &:hover {
-    // background: url(/src/img/svg/coffee-cup_favicon.svg) no-repeat right;
-    // padding: 20px 64px;
-    .button_menu_text {
-      padding-right: 24px;
-    }
+@media (max-width: 767px) {
+  .offer_title {
+    @include mobile_heading_1_accent();
   }
-} */
+  .offer_title_italic {
+    @include mobile_heading_1_accent_italic();
+  }
+  .enjoy {
+    align-items: center;
+    margin: 0px 16px 100px;
+    height: 544px;
+  }
+  .enjoy_content {
+    margin: 0 16px;
+    width: auto;
+    // margin: 60px 16px;
+  }
+  .enjoy_button .enjoy_button_content .button_menu_icon {
+    opacity: 1;
+    width: 20px;
+    padding-left: 8px;
+  }
+}
 
-/* MAIN */
-/* favorites_coffee */
+// MAIN
+
+// start section favorites_coffee
 .favorites_coffee {
   margin: 0px 40px 100px;
 }
 .favorite_coffee_text {
   @include heading_2();
   color: $dark;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .favorite_coffee_text_italic {
   @include heading_2_accent();
@@ -194,16 +212,17 @@ body {
   white-space: pre;
 }
 .picture_slider {
-  width: 480px;
-  height: 480px;
+  width: 100%;
+  height: auto;
 }
 .description {
-  width: 480px;
-  height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  max-width: 480px;
+  margin-top: 20px;
 }
 .drink_name {
   @include heading_3();
@@ -213,6 +232,7 @@ body {
   @include medium();
   line-height: 24px;
   color: $dark;
+  text-align: center;
 }
 .price {
   @include heading_3();
@@ -227,8 +247,23 @@ body {
   box-sizing: border-box;
   padding: 290px 40px 290px 4px;
 }
+@media (max-width: 1439px) {
+}
+@media (max-width: 767px) {
+  .favorite_coffee_text {
+    @include mobile_heading_2_accent();
+  }
+  .favorite_coffee_text_italic {
+    @include mobile_heading_2_accent_italic();
+  }
+  .favorites_coffee {
+    margin: 0px 16px 100px;
+  }
+}
+// end section favorites_coffee
 
-/* arrow right */
+// start section enjoy
+// arrow right
 .circle_arrow_right {
   height: 60px;
   width: 60px;
@@ -237,7 +272,7 @@ body {
   position: relative;
   transition: 0.5s;
   .arrow_right {
-    /* стрелка */
+    // стрелка
     position: absolute;
     top: 50%;
     left: 50%;
@@ -266,8 +301,7 @@ body {
     }
   }
 }
-
-/* arrow left */
+// arrow left
 .circle_arrow_left {
   height: 60px;
   width: 60px;
@@ -276,7 +310,7 @@ body {
   position: relative;
   transition: 0.5s;
   .arrow_left {
-    /* стрелка */
+    // стрелка
     transform: rotate(180deg);
     position: absolute;
     top: 50%;
@@ -307,7 +341,6 @@ body {
     }
   }
 }
-
 .controls {
   display: flex;
   justify-content: center;
@@ -328,18 +361,26 @@ body {
   margin-right: 0;
 }
 
-/* section about */
+@media (max-width: 767px) {
+  .circle_arrow_left,
+  .circle_arrow_right {
+    display: none;
+  }
+}
+// end section enjoy
+
+// start section about
 .about {
   margin: 0px 40px 100px;
 }
 .text_description_about {
   @include heading_2();
   color: $dark;
+  padding-bottom: 40px;
 }
 .text_description_about_italic {
   @include heading_2_accent();
   color: $accent;
-  white-space: pre;
 }
 .images_about {
   display: flex;
@@ -347,43 +388,78 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
+  gap: 40px;
   height: 1060px;
-  padding-top: 40px;
 }
 .image_about_wrapper_big {
-  width: 660px;
-  height: 590px;
   border-radius: 20px;
   overflow: hidden;
+  height: 590px;
 }
 .image_about_wrapper_small {
-  width: 660px;
-  height: 430px;
   border-radius: 20px;
   overflow: hidden;
+  height: 430px;
 }
 .image {
   transform: scale(1.1);
-  position: relative;
   transition: 0.5s;
   &:hover {
     transform: scale(1);
   }
 }
 
-/* section mobile_app */
+@media (max-width: 1439px) {
+  .image_one,
+  .image_four {
+    object-fit: contain;
+    width: 100%;
+  }
+  .image_about_wrapper_big {
+    width: 100%;
+    height: 590px;
+  }
+  .images_about {
+    gap: 40px;
+    height: auto;
+  }
+  .image_about_wrapper_small {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .text_description_about {
+    @include mobile_heading_2_accent();
+  }
+  .text_description_about_italic {
+    @include mobile_heading_2_accent_italic();
+  }
+  .about {
+    margin: 0px 16px 100px;
+  }
+  .image_one,
+  .image_four {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+// end section about
+
+// start section mobile_app
 .mobile_app {
   display: flex;
-  align-items: center;
+  gap: 100px;
   justify-content: space-between;
   margin: 0px 40px 100px;
 }
 .mobile_app_offer {
-  width: 630px;
-  height: 342px;
+  // width: 630px;
+  // height: 342px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 }
 .title_offer {
   @include heading_2();
@@ -424,7 +500,6 @@ body {
     }
   }
 }
-
 .text_button_appStore,
 .text_button_google {
   @include caption();
@@ -451,31 +526,49 @@ body {
 }
 .buttons {
   display: flex;
-}
-.mobile_app_screens {
-  width: 630px;
-  height: 630px;
+  flex-wrap: wrap;
 }
 
-// footer
+@media (max-width: 1439px) {
+  .mobile_app {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .mobile_app_screens {
+    width: 100%;
+  }
+  .title_offer {
+    @include mobile_heading_2_accent();
+  }
+  .title_offer_italic {
+    @include mobile_heading_2_accent_italic();
+  }
+  .mobile_app_offer {
+    width: 100%;
+    height: 100%;
+  }
+  .buttons {
+    gap: 20px;
+  }
+  .mobile_app {
+    margin: 0px 16px 100px;
+  }
+}
+// end section mobile_app
+
+// start section footer
 .contacts {
   background: $container;
   border-radius: 40px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   gap: 100px;
   padding: 100px 100px;
   margin: 0px 40px 40px;
 }
-
-@media (max-width: 768px) {
-  .contacts {
-    padding: 100px 60px;
-  }
-}
-
 .left_side_contacts {
   flex: 1 0 1rem;
   display: flex;
@@ -485,12 +578,11 @@ body {
 }
 .right_side_contacts {
   flex: 1 0 1rem;
-  height: 186px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 40px;
 }
-
 .slogan {
   @include heading_2();
   color: $light;
@@ -499,7 +591,6 @@ body {
 .slogan_italic {
   @include heading_2_accent();
   color: $accent;
-  white-space: pre;
 }
 .icons_footer {
   display: flex;
@@ -522,7 +613,6 @@ body {
     background-color: $light;
   }
 }
-
 .title_contacts {
   @include heading_3();
   color: $light;
@@ -545,7 +635,6 @@ body {
 .address {
   @include link_animation_light();
 }
-
 .map,
 .phone,
 .hours {
@@ -553,3 +642,28 @@ body {
   height: 20px;
   padding: 0 8px 4px 0;
 }
+
+@media (max-width: 1439px) {
+  .contacts {
+    padding: 100px 60px;
+  }
+  .contacts {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .slogan {
+    @include mobile_heading_2_accent();
+  }
+  .slogan_italic {
+    @include mobile_heading_2_accent_italic();
+  }
+  .contacts {
+    margin: 0 16px 40px;
+    padding: 60px 16px;
+    gap: 40px;
+  }
+}
+
+// end section footer
