@@ -7,7 +7,44 @@
     <link type="image/x-icon" href="/src/img/svg/coffee-cup_favicon.svg" rel="shortcut icon" />
   </head>
   <body>
+    <!-- header -->
     <header class="header">
+      <div class="header__logo">
+        <a href="/" class="header_logo_link">
+          <img src="./img/svg/logo.svg" alt="logo coffee house" class="header_logo_pic" />
+        </a>
+      </div>
+
+      <nav class="header_nav">
+        <ul class="header_list">
+          <li class="header_item">
+            <a href="#favorites_coffee" class="header_link">Favorite coffee</a>
+          </li>
+          <li class="header_item">
+            <a href="#about" class="header_link">About</a>
+          </li>
+          <li class="header_item">
+            <a href="#mobile_app" class="header_link">Mobile app</a>
+          </li>
+          <li class="header_item">
+            <a href="#contacts" class="header_link">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header_menu">
+        <a href="coffee.html" class="header_link_menu"
+          >Menu <img src="./img/svg/header-coffee-cup.svg" alt="menu" />
+        </a>
+      </div>
+
+      <div class="button_icon_burger">
+        <span class="burger_line burger_line_first"></span>
+        <span class="burger_line burger_line_second"></span>
+      </div>
+    </header>
+
+    <!-- <header class="header">
       <div class="header__logo">
         <a href="/" class="header_logo_link">
           <img src="./img/svg/logo.svg" alt="logo coffee house" class="header_logo_pic" />
@@ -36,9 +73,9 @@
           Menu <img src="./img/svg/header-coffee-cup.svg" alt="menu" />
         </p>
       </div>
-    </header>
+    </header> -->
 
-    <!--  MAIN -->
+    <!-- menu -->
     <main class="menu">
       <section class="menu_coffee">
         <h2 class="menu_title">
@@ -67,18 +104,22 @@
             <p class="tab_name">Dessert</p>
           </form>
         </div>
+
+        <!-- cards -->
       </section>
       <section id="cards" class="cards"></section>
     </main>
 
+    <!-- footer -->
     <footer id="contacts" class="contacts">
       <div class="left_side_contacts">
         <h2 class="slogan">
-          Sip, Savor, Smile. <span class="slogan_italic">It’s coffee time!</span>
+          Sip, Savor, Smile.
+          <span class="slogan_italic">It’s coffee time!</span>
         </h2>
 
         <div class="icons_footer">
-          <div action="submit" class="button_twitter">
+          <div class="button_twitter">
             <!-- <img src="/src/img/svg/icon_twitter.svg" alt="icon_twitter" /> -->
             <svg
               width="24"
@@ -96,7 +137,7 @@
             </svg>
           </div>
 
-          <div action="submit" class="button_instagram">
+          <div class="button_instagram">
             <svg
               width="24"
               height="24"
@@ -123,7 +164,7 @@
             </svg>
           </div>
 
-          <div action="submit" class="button_facebook">
+          <div class="button_facebook">
             <svg
               width="24"
               height="24"
