@@ -41,4 +41,18 @@ const cardsElements = CARDS.map(
   //   return div;
 );
 
+const toggleClass = (element, className) => {
+  const isActive = element.classList.contains(className);
+  if (isActive) element.classList.remove(className);
+  else element.classList.add(className);
+};
+
+const header_content = document.getElementById("header_content");
+const button_icon_burger = document.getElementById("button_icon_burger");
+button_icon_burger.addEventListener("click", () => {
+  toggleClass(header_content, "active");
+  toggleClass(button_icon_burger, "active");
+});
+// console.log({ header_nav, button_icon_burger });
+
 CARDS_ROOT?.append(...cardsElements); //добавляем в section cards созданные здесь карточки

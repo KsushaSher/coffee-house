@@ -1,108 +1,35 @@
 @import "./common.scss";
 
-// start header
-.header {
-  @include medium();
-  color: $dark;
-  padding: 20px 40px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  position: relative;
-}
-.header_logo_link {
-  display: block;
-}
-.header_logo_pic {
-  cursor: pointer;
-}
-.header_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-.header_link {
-  @include link_button();
-  @include link_animation_dark();
-  color: $dark;
-}
-.header_link_menu {
-  @include link_button();
-  @include link_animation_dark();
-  transition: 1s;
-  color: $dark;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-.button_icon_burger {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  border: 1px solid $dark;
-  border-radius: 100px;
-  box-sizing: border-box;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  position: absolute;
-  right: 40px;
-  opacity: 0;
-}
-.burger_line {
-  display: block;
-  width: 16px;
-  border: 1px solid $dark;
-  border-start-start-radius: 100px;
-  border-end-start-radius: 100px;
-  border-start-end-radius: 100px;
-  border-end-end-radius: 100px;
-}
-
-@media (max-width: 768px) {
-  .header_nav,
-  .header_menu {
-    transition: 0.3s;
-    display: none;
-  }
-  .button_icon_burger {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 380px) {
-  .header {
-    padding: 20px 16px;
-  }
-}
-// end header
-
 // start menu
 .menu_title {
   @include heading_2();
   color: $dark;
   width: 800px;
   height: 150px;
+  margin: 0 auto;
+  text-align: center;
 }
 .menu_title_italic {
   @include heading_2_accent();
   color: $accent;
 }
 .menu_coffee {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
+  // text-align: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
 }
+@media (max-width: 1439px) {
+  menu_title {
+    width: 100%;
+    padding: 0px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+}
+
 // end menu
 
 // start tabs
@@ -165,6 +92,7 @@
   grid-gap: 40px;
   margin: 0px 40px 100px;
 }
+
 .card {
   width: 310px;
   height: 506px;
@@ -221,8 +149,13 @@
 }
 
 @media (max-width: 1439px) {
-  // grid-template-columns: repeat(4, 2fr);
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 767px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 // end cards
