@@ -10,10 +10,8 @@ const CARDS_ROOT = document.getElementById("cards"); //находим место
 const genElement = (tag, attrs = {}, children) => {
   //пишем функцию которая создаст тег, запишет атрибуты, добывит чилдренов
   const element = document.createElement(tag);
-
   for (const key in attrs) element.setAttribute(key, attrs[key]);
   if (children && Array.isArray(children)) element.append(...children);
-
   return element;
 };
 const cardsElements = CARDS.map(
@@ -33,18 +31,18 @@ const cardsElements = CARDS.map(
   //   const title = generateElement("span", {}, [card.title]);
   //   const description = generateElement("p", {}, [card.description]);
   //   const price = generateElement("span", { class: "coffeePrice" }, [card.price]);
-
   //   const content = generateElement("div", { class: "card_content" }, [title, description, price]);
-
   //   const div = generateElement("div", { class: "card" }, [img, content]); //(создаем в dom ветвление как в html файле)  мы создаем теги (а точнее не теги а node элементы) для того чтобы в дальнейшем с помощью .append поместить их в dom
-
   //   return div;
 );
 
+CARDS_ROOT?.append(...cardsElements); //добавляем в section cards созданные здесь карточки
+
+// АДАПТАЦИЯ МЕНЮ
 const toggleClass = (element, className) => {
-  const isActive = element.classList.contains(className);
-  if (isActive) element.classList.remove(className);
-  else element.classList.add(className);
+  const isActive = element.classList.contains(className); //проверка наличия класса
+  if (isActive) element.classList.remove(className); // если есть удаляет
+  else element.classList.add(className); // если нет - добавляет
 };
 
 const header_content = document.getElementById("header_content");
@@ -54,5 +52,3 @@ button_icon_burger.addEventListener("click", () => {
   toggleClass(button_icon_burger, "active");
 });
 // console.log({ header_nav, button_icon_burger });
-
-CARDS_ROOT?.append(...cardsElements); //добавляем в section cards созданные здесь карточки

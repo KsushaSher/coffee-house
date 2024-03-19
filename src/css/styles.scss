@@ -52,31 +52,26 @@ body {
   display: none;
 }
 .burger_line {
+  transition: 3s;
   display: block;
   width: 16px;
-  border: 1px solid $dark;
+  height: 2px;
+  background-color: $dark;
   border-start-start-radius: 100px;
   border-end-start-radius: 100px;
   border-start-end-radius: 100px;
   border-end-end-radius: 100px;
 }
-
 .header_content {
   flex-grow: 1;
   display: flex;
 }
-
 .header_nav {
   flex-grow: 1;
   display: flex;
   justify-content: center;
 }
-
 @media (max-width: 1439px) {
-  .header_content {
-    transition: 0.3s;
-    display: none;
-  }
   .button_icon_burger {
     display: flex;
     width: 44px;
@@ -90,10 +85,26 @@ body {
     align-items: center;
     gap: 6px;
   }
-  .header_content.active {
+  .button_icon_burger.active {
+    position: relative;
+    .burger_line {
+      position: absolute;
+    }
+    .burger_line.burger_line_first {
+      transform: rotate(45deg);
+    }
+    .burger_line.burger_line_second {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .header_content {
+    // display: none;
+    transform: translateX(100%);
+    transition: 0.7s all linear;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 53.5px;
     position: fixed;
     top: 105px;
     bottom: 0;
@@ -103,20 +114,38 @@ body {
     background-color: $light;
     .header_nav {
       flex-grow: 0;
+      .header_list {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        .header_item {
+          .header_link {
+            @include burger_link();
+          }
+        }
+      }
     }
-    .header_list {
-      height: 100%;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+  }
+
+  .header_content.active {
+    transform: translateX(0);
   }
   .header_menu {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
+    .header_link_menu {
+      gap: 16px;
+      @include burger_link();
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 }
-
 @media (max-width: 767px) {
   .header {
     padding: 20px 16px;
