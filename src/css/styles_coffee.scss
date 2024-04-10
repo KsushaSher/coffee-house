@@ -25,7 +25,6 @@
     margin: 0px 40px;
   }
 }
-
 @media (max-width: 767px) {
   .menu_title {
     @include mobile_heading_2_accent();
@@ -34,7 +33,6 @@
     @include mobile_heading_2_accent_italic();
   }
 }
-
 // end menu
 
 // start tabs
@@ -70,9 +68,8 @@
   }
 }
 .tab:hover,
-.tab:active,
-.coffee {
-  transition: 1s;
+.active {
+  // transition: 1s;
   background: $container;
   border: none;
   border: 1px $container solid;
@@ -83,18 +80,17 @@
     color: $light;
   }
 }
+.coffee,
 .tea,
 .dessert:hover {
   cursor: pointer;
 }
-
 @media (max-width: 767px) {
   .tabs {
     gap: 8px;
     margin: 40px 16px;
   }
 }
-
 // end tabs
 
 // start cards
@@ -105,7 +101,6 @@
   grid-gap: 40px;
   margin: 0px 40px 100px;
 }
-
 .card {
   width: 310px;
   height: 506px;
@@ -160,7 +155,6 @@
   color: $dark;
   margin: auto auto 0 0;
 }
-
 @media (max-width: 1439px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);

@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee</title>
     <link type="image/x-icon" href="/src/img/svg/coffee-cup_favicon.svg" rel="shortcut icon" />
+    <style>
+      .header_content {
+        transform: translateX(100%);
+      }
+    </style>
   </head>
   <body>
     <!-- header -->
@@ -86,25 +91,25 @@
         </h2>
 
         <!-- tabs -->
-        <div class="tabs">
-          <form action="submit" class="tab coffee">
+        <div class="tabs" id="tabs">
+          <div class="tab coffee active" data-type="coffee">
             <div class="circle_icon">
               <p class="icon_in_circle">☕</p>
             </div>
             <p class="tab_name">Coffee</p>
-          </form>
-          <form action="submit" class="tab tea">
+          </div>
+          <div class="tab tea" data-type="tea">
             <div class="circle_icon">
               <p class="icon_in_circle">🫖</p>
             </div>
             <p class="tab_name">Tea</p>
-          </form>
-          <form action="submit" class="tab dessert">
+          </div>
+          <div class="tab dessert" data-type="dessert">
             <div class="circle_icon">
               <p class="icon_in_circle">🍰</p>
             </div>
             <p class="tab_name">Dessert</p>
-          </form>
+          </div>
         </div>
 
         <!-- cards -->

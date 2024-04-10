@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee House</title>
     <link type="image/x-icon" href="/src/img/svg/coffee-cup_favicon.svg" rel="shortcut icon" />
+    <style>
+      .header_content {
+        transform: translateX(100%);
+      }
+    </style>
   </head>
 
   <body>
@@ -77,7 +82,7 @@
         </h2>
 
         <div class="slider">
-          <div class="circle_arrow_left">
+          <div class="circle_arrow_left" id="circle_arrow_left">
             <img src="/src/img/svg/arrow-right.svg" alt="arrow left" class="arrow_left" />
             <img
               src="/src/img/svg/arrow-right_hover.svg"
@@ -86,21 +91,59 @@
             />
           </div>
 
-          <div class="row_slider">
-            <img src="/src/img/coffee-slider-1.png" alt="picture slider" class="picture_slider" />
-
-            <div class="description">
-              <div class="drink_name">S’mores Frappuccino</div>
-
-              <div class="coffee_description">
-                This new drink takes an espresso and mixes it with brown sugar and cinnamon before
-                being topped with oat milk.
+          <div class="slider_content_wrapper">
+            <div class="slider_content" id="slider_content">
+              <div class="row_slider" id="row_slider">
+                <img
+                  src="/src/img/coffee-slider-1.png"
+                  alt="picture slider"
+                  class="picture_slider"
+                />
+                <div class="description">
+                  <div class="drink_name">S’mores Frappuccino</div>
+                  <div class="coffee_description">
+                    This new drink takes an espresso and mixes it with brown sugar and cinnamon
+                    before being topped with oat milk.
+                  </div>
+                  <div class="price">$5.50</div>
+                </div>
               </div>
-              <div class="price">$5.50</div>
+
+              <div class="row_slider" id="row_slider">
+                <img
+                  src="/src/img/coffee-slider-2.png"
+                  alt="picture slider"
+                  class="picture_slider"
+                />
+                <div class="description">
+                  <div class="drink_name">Caramel Macchiato</div>
+                  <div class="coffee_description">
+                    Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream
+                    under whipped thick foam.
+                  </div>
+                  <div class="price">$5.00</div>
+                </div>
+              </div>
+
+              <div class="row_slider" id="row_slider">
+                <img
+                  src="/src/img/coffee-slider-3.png"
+                  alt="picture slider"
+                  class="picture_slider"
+                />
+                <div class="description">
+                  <div class="drink_name">Ice coffee</div>
+                  <div class="coffee_description">
+                    A popular summer drink that tones and invigorates. Prepared from coffee, milk
+                    and ice.
+                  </div>
+                  <div class="price">$4.50</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="circle_arrow_right">
+          <div class="circle_arrow_right" id="circle_arrow_right">
             <img src="/src/img/svg/arrow-right.svg" alt="arrow right" class="arrow_right" />
             <img
               src="/src/img/svg/arrow-right_hover.svg"
@@ -112,9 +155,9 @@
 
         <!-- три полосочки -->
         <div class="controls">
-          <div class="control_1"></div>
-          <div class="control_2"></div>
-          <div class="control_3"></div>
+          <div class="control control_1"></div>
+          <div class="control control_2"></div>
+          <div class="control control_3"></div>
         </div>
       </section>
     </main>
