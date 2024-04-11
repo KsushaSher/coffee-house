@@ -3,11 +3,9 @@ import "./css/fonts.scss";
 import "./css/common.scss";
 import "./css/styles.scss";
 import "./css/styles_coffee.scss";
-import { CARDS_COFFEE } from "./mock";
-import { CARDS_TEA } from "./mock";
-import { CARDS_DESSERT } from "./mock";
+import { CARDS } from "./mock";
 
-// START СОЗДАЕМ КАРТОЧКИ COFFEE
+// START СОЗДАЕМ КАРТОЧКИ
 const CARDS_ROOT = document.getElementById("cards"); //находим место в html куда положим наши каточки, находим section с id="cards"
 //пишем функцию которая создаст тег, запишет атрибуты, добывит чилдренов
 const genElement = (tag, attrs = {}, children) => {
@@ -17,8 +15,8 @@ const genElement = (tag, attrs = {}, children) => {
   return element;
 };
 
-const genCards = (CARDS_COFFEE) =>
-  CARDS_COFFEE.map((card) =>
+const genCards = (cards) =>
+  cards?.map((card) =>
     genElement("div", { class: "card" }, [
       genElement("div", { class: "card_image_wrapper" }, [
         genElement("img", { class: "card_image", src: card.img }),
@@ -55,8 +53,8 @@ const genCards = (CARDS_COFFEE) =>
 // start переключение coffee/tea/dessert (2 вариант)
 const addTabsClickHandler = () => {
   const tabsWrapper = document.querySelector("#tabs");
-  const tabs = Array.from(tabsWrapper.children);
-  tabsWrapper.addEventListener("click", (e) => {
+  const tabs = Array.from(tabsWrapper?.children || []);
+  tabsWrapper?.addEventListener("click", (e) => {
     const clickedTab = tabs.find((item) => item.contains(e.target));
     if (clickedTab) {
       addActiveClassToTab(tabs, clickedTab);
@@ -72,23 +70,22 @@ const filterCardsBySelectedTab = (clickedTab) => {
   let cardsWrapper = document.querySelector("#cards");
   cardsWrapper.innerHTML = "";
   const type = clickedTab.dataset.type;
-  const cards = CARDS_MAP[type];
-  cardsWrapper.append(...genCards(cards));
-  // const arrayTabs = ["coffee", "tea", "dessert"];
-  // const arrayTapeOfCards = [CARDS_COFFEE, CARDS_TEA, CARDS_DESSERT];
-  // arrayTabs.indexOf(clickedTab.innerHTML);
+  let arrayCards = CARDS.filter((card) => card.category === type);
+  cardsWrapper.append(...genCards(arrayCards));
 };
-const CARDS_MAP = {
-  coffee: CARDS_COFFEE,
-  tea: CARDS_TEA,
-  dessert: CARDS_DESSERT,
-};
-
+// const CARDS_MAP = {
+//   coffee: CARDS_COFFEE,
+//   tea: CARDS_TEA,
+//   dessert: CARDS_DESSERT,
+// };
 addTabsClickHandler();
 // end переключение coffee/tea/dessert (2 вариант)
 
-CARDS_ROOT?.append(...genCards(CARDS_COFFEE)); //добавляем в section cards созданные здесь карточки - исходное значение при загрузке страницы
-// END СОЗДАЕМ КАРТОЧКИ COFFEE
+let cardsWrapper = document.querySelector("#cards");
+let arrayCards = CARDS.filter((card) => card.category === "coffee");
+
+cardsWrapper?.append(...genCards(arrayCards)); //добавляем в section cards созданные здесь карточки - исходное значение при загрузке страницы
+// END СОЗДАЕМ КАРТОЧКИ
 
 //создаем и заполняем карточки с помощью написанной нами ранее функции
 // const cardsElements = CARDS.map(
