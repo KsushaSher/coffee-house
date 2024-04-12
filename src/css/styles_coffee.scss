@@ -169,3 +169,162 @@
   }
 }
 // end cards
+
+// START modal_windows
+.modal_windows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper_modal_window {
+  position: absolute;
+  display: flex;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 800px;
+  // height: 504px;
+  background: $body;
+  border-radius: 40px;
+  z-index: 2;
+}
+
+.window_coffee {
+  width: 310px;
+  height: 310px;
+  border-radius: 40px;
+}
+.window_content_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+.window_name {
+  @include heading_3();
+  color: $dark;
+  padding-bottom: 12px;
+}
+.window_discription {
+  @include medium();
+  padding-bottom: 20px;
+}
+// start "size"
+.legend {
+  @include medium();
+  margin-bottom: 8px;
+}
+.button_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  .label {
+    @include link_button();
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 7px;
+    outline: 1px $border_light solid;
+    border-radius: 100px;
+    .button_input {
+      display: none;
+    }
+    .button_icon_circle {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
+      background: $border_light;
+      .button_icon {
+        display: inline-block;
+        color: $dark;
+        vertical-align: text-top;
+        margin: 0 auto;
+      }
+    }
+    .button_value {
+      @include link_button();
+      color: $dark;
+      display: inline-block;
+      color: $dark;
+      padding: 0px 9px 0px 8px;
+    }
+  }
+}
+// end "size"
+.total {
+  @include heading_3();
+  color: $dark;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.warning {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  border-top: 1px $border_light solid;
+}
+.warning_content {
+  @include caption();
+  color: $dark;
+}
+.button_close {
+  @include link_button();
+  color: $dark;
+  padding: 10px 0;
+  border: 1px $dark solid;
+  border-radius: 100px;
+  background: $body;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $dark;
+  opacity: 80%;
+  z-index: 1;
+}
+
+.label:hover,
+.label.active {
+  background: $container;
+  outline: 1px $container solid;
+  border-radius: 100px;
+  .button_icon_circle {
+    background: $light;
+  }
+  .button_value {
+    color: $light;
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper_modal_window {
+    width: 688px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper_modal_window {
+    width: 342px;
+  }
+  .window_coffee {
+    display: none;
+  }
+}
+
+// END modal_windows
