@@ -172,14 +172,22 @@
 
 // START modal_windows
 .modal_windows {
-  position: fixed;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  // // visibility: hidden;
+  // transition: 0.3s;
+}
+
+.visible {
+  display: flex;
+  position: fixed;
+  opacity: 1;
 }
 
 .wrapper_modal_window {
@@ -188,13 +196,12 @@
   padding: 16px;
   box-sizing: border-box;
   width: 800px;
-  // height: 504px;
   background: $body;
   border-radius: 40px;
   z-index: 2;
 }
 
-.window_coffee {
+.window_coffee_img {
   width: 310px;
   height: 310px;
   border-radius: 40px;
@@ -209,7 +216,7 @@
   color: $dark;
   padding-bottom: 12px;
 }
-.window_discription {
+.window_description {
   @include medium();
   padding-bottom: 20px;
 }
@@ -322,7 +329,7 @@
   .wrapper_modal_window {
     width: 342px;
   }
-  .window_coffee {
+  .window_coffee_img {
     display: none;
   }
 }

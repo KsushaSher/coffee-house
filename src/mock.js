@@ -25,6 +25,7 @@ import dessert8 from "./img/coffeeHouse/dessert-8.jpg";
 //  START общий массив
 export const CARDS = [
   {
+    id: "1",
     img: coffee1,
     name: "Irish coffee",
     description: "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
@@ -61,6 +62,7 @@ export const CARDS = [
   },
 
   {
+    id: "2",
     img: coffee2,
     name: "Kahlua coffee",
     description: "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
@@ -97,6 +99,7 @@ export const CARDS = [
   },
 
   {
+    id: "3",
     img: coffee3,
     name: "Honey raf",
     description: "Espresso with frothed milk, cream and aromatic honey",
@@ -133,6 +136,7 @@ export const CARDS = [
   },
 
   {
+    id: "4",
     img: coffee4,
     name: "Ice cappuccino",
     description: "Cappuccino with soft thick foam in summer version with ice",
@@ -169,6 +173,7 @@ export const CARDS = [
   },
 
   {
+    id: "5",
     img: coffee5,
     name: "Espresso",
     description: "Classic black coffee",
@@ -205,6 +210,7 @@ export const CARDS = [
   },
 
   {
+    id: "6",
     img: coffee6,
     name: "Latte",
     description: "Espresso coffee with the addition of steamed milk and dense milk foam",
@@ -241,6 +247,7 @@ export const CARDS = [
   },
 
   {
+    id: "7",
     img: coffee7,
     name: "Latte macchiato",
     description: "Espresso with frothed milk and chocolate",
@@ -277,6 +284,7 @@ export const CARDS = [
   },
 
   {
+    id: "8",
     img: coffee8,
     name: "Coffee with cognac",
     description: "Fragrant black coffee with cognac and whipped cream",
@@ -313,6 +321,7 @@ export const CARDS = [
   },
 
   {
+    id: "9",
     img: tea1,
     name: "Moroccan",
     description:
@@ -350,6 +359,7 @@ export const CARDS = [
   },
 
   {
+    id: "10",
     img: tea2,
     name: "Ginger",
     description: "Original black tea with fresh ginger, lemon and honey",
@@ -386,6 +396,7 @@ export const CARDS = [
   },
 
   {
+    id: "11",
     img: tea3,
     name: "Cranberry",
     description: "Invigorating black tea with cranberry and honey",
@@ -422,6 +433,7 @@ export const CARDS = [
   },
 
   {
+    id: "12",
     img: tea4,
     name: "Sea buckthorn",
     description: "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
@@ -458,6 +470,7 @@ export const CARDS = [
   },
 
   {
+    id: "13",
     img: dessert1,
     name: "Marble cheesecake",
     description: "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
@@ -494,6 +507,7 @@ export const CARDS = [
   },
 
   {
+    id: "14",
     img: dessert2,
     name: "Red velvet",
     description: "Layer cake with cream cheese frosting",
@@ -530,6 +544,7 @@ export const CARDS = [
   },
 
   {
+    id: "15",
     img: dessert3,
     name: "Cheesecakes",
     description:
@@ -567,6 +582,7 @@ export const CARDS = [
   },
 
   {
+    id: "16",
     img: dessert4,
     name: "Creme brulee",
     description: "Delicate creamy dessert in a caramel basket with wild berries",
@@ -603,6 +619,7 @@ export const CARDS = [
   },
 
   {
+    id: "17",
     img: dessert5,
     name: "Pancakes",
     description: "Tender pancakes with strawberry jam and fresh strawberries",
@@ -639,6 +656,7 @@ export const CARDS = [
   },
 
   {
+    id: "18",
     img: dessert6,
     name: "Honey cake",
     description: "Classic honey cake with delicate custard",
@@ -675,6 +693,7 @@ export const CARDS = [
   },
 
   {
+    id: "19",
     img: dessert7,
     name: "Chocolate cake",
     description: "Cake with hot chocolate filling and nuts with dried apricots",
@@ -711,6 +730,7 @@ export const CARDS = [
   },
 
   {
+    id: "20",
     img: dessert8,
     name: "Black forest",
     description: "A combination of thin sponge cake with cherry jam and light chocolate mousse",
