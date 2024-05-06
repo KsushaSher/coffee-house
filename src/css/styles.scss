@@ -255,7 +255,7 @@ body {
 
 // start favorites_coffee
 .row_slider {
-  transition: all ease 1s;
+  // transition: all ease 0.1s;
 }
 .favorites_coffee {
   margin: 0px 40px 100px;
@@ -311,6 +311,8 @@ body {
   overflow: hidden;
 }
 .slider_content {
+  position: absolute;
+  left: -480px;
   transition: transform 0.5s ease-in-out;
   display: flex;
   flex-direction: row;
@@ -382,6 +384,7 @@ body {
 }
 // arrow left
 .circle_arrow_left {
+  z-index: 1;
   height: 60px;
   width: 60px;
   border-radius: 100%;
@@ -423,20 +426,63 @@ body {
 .controls {
   display: flex;
   justify-content: center;
+  gap: 12px;
   box-sizing: border-box;
   padding-top: 40px;
 }
-.control {
-  width: 40px;
-  height: 4px;
+
+.progress_line_bg {
   background: $border_light;
+  position: relative;
+  width: 40px;
+  // width: 100%;
+  height: 4px;
   border-radius: 100px;
   box-sizing: border-box;
-  margin-right: 12px;
+  overflow: hidden;
 }
-.control_1 {
-  transition: 4s;
-  transform: scaleX(2);
+.progress_line {
+  background: $border_dark;
+  position: absolute;
+  // left: -40px;
+  width: 0px;
+  border-radius: 100px;
+  height: 4px;
+  // width: 100%;
+  // transition: 7s;
+  // animation-name: increase_progress_bar;
+  // animation-duration: 7s;
+  // animation-iteration-count: infinite;
+  // animation-play-state: running;
+}
+
+@keyframes increase_progress_bar {
+  0% {
+    width: 0%;
+    // transform: translateX(0%);
+  }
+  100% {
+    width: 100%;
+    // transform: translateX(100%);
+  }
+}
+
+.progress_line_animation {
+  // cursor: pointer;
+  animation-name: increase_progress_bar;
+  animation-timing-function: linear;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  // animation-fill-mode: forwards;
+  // &:hover {
+  //   animation-play-state: paused;
+  // }
+}
+
+.progress_line_paused {
+  animation-play-state: paused;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

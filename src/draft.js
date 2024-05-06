@@ -232,3 +232,139 @@ const renderArticleModalWindow = (article) => {
   modal.renderModal();
 };
 // end рендер модального окна
+
+// START SLIDERRRRRRRRRRRRR favorite coffee
+const slider = document.querySelector("#slider_content"); //обертка
+if (slider) {
+  // проверка наличия слайдера, если есть тогда выполняем все ниженаписанное
+  const slides = Array.from(slider.querySelectorAll("#row_slider")); //массив слайдов
+  const prevArrow = document.querySelector("#circle_arrow_left"); //кнопка влево
+  const nextArrow = document.querySelector("#circle_arrow_right"); //кнопка вправо
+  const slideCount = slides.length; //длина массива = 3
+  let slideIndex = 0; //начальное значение индекса
+  const progress_bar_wrapper = document.querySelector("#progress_bar_wrapper");
+
+  let timer = setInterval(() => {
+    slideIndex = (slideIndex + 1) % slideCount;
+    slide();
+    progressStatus(slideIndex);
+  }, 2500);
+
+  const prevSlider = () => {
+    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+    slide();
+    clearInterval(timer);
+    timer = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slideCount;
+      slide();
+      progressStatus(slideIndex);
+    }, 2500);
+  };
+
+  const nextSlide = () => {
+    slideIndex = (slideIndex + 1) % slideCount;
+    slide();
+    clearInterval(timer);
+    timer = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slideCount;
+      slide();
+      progressStatus(slideIndex);
+    }, 2500);
+  };
+
+  prevArrow.addEventListener("click", prevSlider);
+  nextArrow.addEventListener("click", nextSlide);
+
+  //смещает карточки в окне
+  const slide = () => {
+    const slideWidth = slider.clientWidth;
+    const slideOffset = -slideIndex * slideWidth;
+    slider.style.transform = `translateX(${slideOffset}px)`;
+  };
+
+  // start progress_bar
+  const progressStatus = (slideIndex) => {
+    const id = setInterval(progressStatus, 25);
+    let width = 1;
+
+    function progressStatus() {
+      const progress_line = progress_bar_wrapper.children[slideIndex].children[0];
+
+      if (width > 100) {
+        progress_line.style.width = "0%";
+        clearInterval(id);
+      } else {
+        width++;
+        progress_line.style.width = width + "%";
+      }
+    }
+  };
+
+  progressStatus(0);
+}
+
+// const id = setInterval(progressStatus, 25);
+// function progressStatus() {
+//   if (width > 100) {
+//     clearInterval(id);
+//   } else {
+//     width++;
+//     progress_line.style.width = width + "%";
+//   }
+// }
+
+// function progress() {
+//   const progress_line = document.getElementById("progress_line");
+//   let width = 1;
+//   const id = setInterval(progressStatus, 2500); // запускаем таймер
+//   // увеличиваем ширину до 100
+//   function progressStatus() {
+//     if (width > 100) {
+//       clearInterval(id);
+//     } else {
+//       width++;
+//       progress_line.style.width = width + "%";
+//     }
+//   }
+// }
+
+// progress();
+// end progress_bar
+// }
+
+// END SLIDER favorite coffee
+
+/* 
+  let timer;
+  const startInterval = () => {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slideCount;
+      slide();
+    }, 2500);
+  };
+  startInterval();
+
+  const prevSlider = () => {
+    slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+    slide();
+    startInterval();
+  };
+
+  const nextSlide = () => {
+    slideIndex = (slideIndex + 1) % slideCount;
+    slide();
+    startInterval();
+  };
+*/
+
+// const nextSlide = () => {
+//   if (slideIndex < 2) {
+//     slideIndex = (slideIndex + 1) % slideCount;
+//     slide();
+//     setInterval(nextSlide, 2500);
+//   } else if (slideIndex == 2) {
+//     slideIndex = 0;
+//     slide();
+//   }
+// };
