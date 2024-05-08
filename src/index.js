@@ -35,6 +35,13 @@ const genCards = (cards) =>
 let cardsWrapper = document.querySelector("#cards");
 let arrayCards = CARDS.filter((card) => card.category === "coffee");
 cardsWrapper?.append(...genCards(arrayCards)); //добавляем в section cards созданные здесь карточки - исходное значение при загрузке страницы
+
+const userScreenWidth = window.innerWidth;
+
+if (userScreenWidth < 1440) {
+} else {
+}
+
 // END СОЗДАЕМ КАРТОЧКИ
 
 // start переключение coffee/tea/dessert (2 вариант)

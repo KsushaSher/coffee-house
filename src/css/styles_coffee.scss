@@ -103,7 +103,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 40px;
-  margin: 0px 40px 100px;
+  margin: 0px 40px;
 }
 .card {
   width: 310px;
@@ -344,3 +344,16 @@
 }
 
 // END modal_windows
+
+// START button_refresh
+.button_refresh {
+  display: none;
+}
+@media (max-width: 1439px) {
+  .button_refresh {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 100px;
+  }
+}
+// END button_refresh
