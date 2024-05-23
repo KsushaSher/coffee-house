@@ -163,6 +163,9 @@
   .cards {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 14px;
+    .visible_button {
+      grid-column: span 2;
+    }
   }
 }
 @media (max-width: 767px) {
@@ -349,11 +352,11 @@
 .button_refresh {
   display: none;
 }
-@media (max-width: 1439px) {
-  .button_refresh {
-    display: flex;
-    justify-content: center;
-    padding: 40px 0 100px;
-  }
+.visible_button {
+  display: flex;
+  justify-content: center;
+  // padding-top: 40px;
+  grid-column: span 4;
+  height: 60px;
 }
 // END button_refresh
